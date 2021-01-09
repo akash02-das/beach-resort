@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
+
 import "./App.scss";
 
 import Home from "./pages/Home";
@@ -10,10 +12,12 @@ class App extends Component {
   render() {
     return (
       <>
-        <Home />
-        <Rooms />
-        <SingleRoom />
-        <Error />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/rooms" component={Rooms} />
+          <Route exact path="/rooms/:slug" component={SingleRoom} />
+          <Route component={Error} />
+        </Switch>
       </>
     );
   }
