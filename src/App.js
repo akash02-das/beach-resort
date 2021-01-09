@@ -8,10 +8,13 @@ import Rooms from "./pages/Rooms";
 import SingleRoom from "./pages/SingleRoom";
 import Error from "./pages/Error";
 
+import Navbar from "./components/Navbar";
+
 class App extends Component {
   render() {
     return (
       <>
+        <Navbar />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/rooms" component={Rooms} />
