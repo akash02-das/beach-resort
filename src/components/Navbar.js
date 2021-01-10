@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import logo from "../images/logo.svg";
 import "../styles/navbar.scss";
 import { FaAlignRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class Navbar extends Component {
   state = {
@@ -18,9 +18,9 @@ class Navbar extends Component {
       <nav className="navbar">
         <div className="nav-center">
           <div className="nav-header">
-            <Link to="/">
+            <NavLink to="/">
               <img src={logo} alt="Beach Resort" />
-            </Link>
+            </NavLink>
             <button
               type="button"
               className="nav-btn"
@@ -33,10 +33,10 @@ class Navbar extends Component {
             className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}
           >
             <li>
-              <Link to="/">Home</Link>
+              <NavLink exact to="/" activeClassName="active-nav">Home</NavLink>
             </li>
             <li>
-              <Link to="/rooms">Rooms</Link>
+              <NavLink to="/rooms" activeClassName="active-nav">Rooms</NavLink>
             </li>
           </ul>
         </div>
