@@ -1,21 +1,25 @@
 import React, { Component } from "react";
 import Loading from "./Loading";
 import Room from "./Room";
+import Title from "./Title";
 import { RoomContext } from "../context";
+import "../styles/featuredRooms.scss";
 
 class FeaturedRooms extends Component {
   static contextType = RoomContext;
 
   render() {
-    const { featuredRooms: rooms } = this.context;
-    console.log(rooms);
+    let { loading, featuredRooms: rooms } = this.context;
+
+    rooms = rooms.map((room) => <Room key={room.id} room={room} />);
 
     return (
-      <div>
-        <h4>Featured Rooms</h4>
-        <Room />
-        <Loading />
-      </div>
+      <section className="featured-rooms">
+        <Title title="featured rooms" />
+        <div className="featured-rooms-center">
+          {loading ? <Loading /> : rooms}
+        </div>
+      </section>
     );
   }
 }
