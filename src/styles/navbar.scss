@@ -44,10 +44,7 @@
     font-weight: 600;
     letter-spacing: $mainSpacing;
 
-    &.active-nav {
-      color: $primaryColor;
-    }
-
+    &.active-nav,
     &:hover {
       color: $primaryColor;
     }

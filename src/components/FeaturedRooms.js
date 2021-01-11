@@ -5,13 +5,12 @@ class FeaturedRooms extends Component {
   static contextType = RoomContext;
 
   render() {
-    const { greeting, name } = this.context;
+    const { featuredRooms: rooms } = this.context;
+    console.log(rooms);
 
     return (
       <div>
-        <h4>
-          {greeting} {name} from Featured Rooms
-        </h4>
+        <h4>Featured Rooms</h4>
       </div>
     );
   }
