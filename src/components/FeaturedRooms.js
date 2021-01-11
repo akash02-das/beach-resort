@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Loading from "./Loading";
+import Room from "./Room";
 import { RoomContext } from "../context";
 
 class FeaturedRooms extends Component {
@@ -11,6 +13,8 @@ class FeaturedRooms extends Component {
     return (
       <div>
         <h4>Featured Rooms</h4>
+        <Room />
+        <Loading />
       </div>
     );
   }
