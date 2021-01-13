@@ -47,7 +47,6 @@ class SingleRoom extends Component {
     } = room;
 
     const [mainImg, ...defaultImg] = images;
-    console.log(defaultImg);
     return (
       <>
         <StyledHero img={mainImg || this.state.defaultBcg}>
