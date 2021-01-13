@@ -13,10 +13,10 @@ const RoomsContainer = () => {
           return <Loading />;
         }
         return (
-          <div>
+          <>
             <RoomsFilter rooms={rooms} />
             <RoomsList rooms={sortedRooms} />
-          </div>
+          </>
         );
       }}
     </RoomConsumer>
