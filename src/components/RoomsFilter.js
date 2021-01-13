@@ -24,12 +24,23 @@ const RoomsFilter = ({ rooms }) => {
     pets,
   } = context;
 
+  //   Type
   //   Get Unique Types
   let types = getUnique(rooms, "type");
   //   Add All
   types = ["all", ...types];
   //   Map to JSX
   types = types.map((item, index) => {
+    return (
+      <option key={index} value={item}>
+        {item}
+      </option>
+    );
+  });
+
+  //   Capacity
+  let people = getUnique(rooms, "capacity");
+  people = people.map((item, index) => {
     return (
       <option key={index} value={item}>
         {item}
@@ -55,6 +66,20 @@ const RoomsFilter = ({ rooms }) => {
           </select>
         </div>
         {/* End Select Type */}
+        {/* Guests */}
+        <div className="form-group">
+          <label htmlFor="capacity">guests</label>
+          <select
+            name="capacity"
+            id="capacity"
+            value={capacity}
+            className="form-control"
+            onChange={handleChange}
+          >
+            {people}
+          </select>
+        </div>
+        {/* End Guests */}
       </form>
     </section>
   );
